@@ -63,6 +63,7 @@
 
   <script>
     let word;
+    let word1= "";
     let letter = "";
     let lifes;;
     let hints;
@@ -123,6 +124,7 @@
       hints = [];
       numberOfHints = 2;
       allreadyCheckedLetters = [];
+      word1="";
       document.getElementById('checked').innerHTML = "";
       document.getElementById('gameboard').innerHTML = "";
       document.getElementById('resultsDiv').innerHTML = "Good luck ! ";
@@ -149,20 +151,24 @@
       console.log(lifes);
     }
 
-
     function checkLetter(letter) {
+
+
       if (lifes == 1) {
         alert("You lost , word- " + word.toUpperCase() + " was to hard for you ");
         document.getElementById('gameboard').innerHTML = word;
       }
       //Own array method "howManySameLetters"
       if (wordLetters.howManySameLetters(letter) > 1) {
+
+
         let a = wordLetters.indexOf(letter);
         let b = wordLetters.lastIndexOf(letter);
+
         let c = wordLetters.lastIndexOf(letter, b + 1);
         document.getElementsByTagName('span')[a].innerHTML = letter;
         document.getElementsByTagName('span')[b].innerHTML = letter;
-
+        word1+=a;
         if (c !== -1) {
           document.getElementsByTagName('span')[c].innerHTML = letter;
         }
@@ -172,13 +178,19 @@
         document.getElementById('communicateOne').innerHTML = "You allready checked it ";
         printCheckedLetters();
 
+
       } else if (wordLetters.includes(letter) == true) {
+        word1+=letter;
         allreadyCheckedLetters.push(letter);
         let index = wordLetters.indexOf(letter);
         document.getElementsByTagName('span')[index].innerHTML = letter;
         document.getElementById('resultsDiv').innerHTML = "Good choice, we have " + letter.toUpperCase() + " !";
         clearCommunicats();
         printCheckedLetters();
+        if(word.length == word1.length){
+          alert("You Won!");
+          document.getElementById('gameboard').innerHTML = word;
+        }
       } else {
         allreadyCheckedLetters.push(letter);
         clearCommunicats();
@@ -193,6 +205,7 @@
       for (let i = 1; i < this.length; i++) {
         if (this[i] == letter)
           counter++;
+
       }
       return counter;
     }
