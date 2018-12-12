@@ -1,87 +1,140 @@
-/* .body{
-  width: 2000px;
-  height: 800px;
-} */
-/* .body{
-  height: 100vh;
-  width: 100vh;
+body {
+  height: 600px;
+background-color:  #737373;
+  border: solid 4px black;
+}
+
+.container {
+
+  display: flex;
+  flex-direction: column;
+}
+
+nav {}
+
+nav ul {
+  background-color: #4d4d4d;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-} */
+}
 
-.container{
-  display: flex;
-  border: solid 10px black;
-  background: yellow;
-
-
-  /* width: 1000px;
-  height: 800px; */
-  justify-content: center;
-
+nav ul li {
+  border: solid 4px black;
   font-size: 20px;
-  flex-flow: wrap ;
-  align-items: flex-start;
-  /* height: 100%;
-  width: 100%; */
-  justify-content: space-between; // Using to justify content
-  flex-grow:
-  /* flex-wrap: wrap;
-  flex-flow: row-reverse ;
-  /* height: 420px;
-
-  border: 6px solid black;
-  display: flex; // how much space it will hold on container. Flex full width, flex-inline will scale
-  flex-direction:  column; // order of displaying. Counting from left or right etc */
-
-}
-
-
-
-.flex-item{
-  border: solid 2px;
-  color:  blue;
-  font-size: 10px;
-  padding: 1rem;
-  height: 30px;
-  /* flex-basis: 1020px; */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex: auto;
   text-align: center;
-  flex-grow: 1;
-  /* background-color: #795858 */
 }
 
-.photo{
-  width: 60px;
-  height: 60px;
-  border: solid 0px;
-  flex: 2 5 200px;
-  //same as
-  /* flex-grow: 2;
-  flex-shrink: 5;
-  flex-basis: 200px; */
-}
-/* .full-word-submit{
-  padding-bottom: 10px;
-} */
-
-
-/* .resultsDiv{
-  padding-bottom: 30px;
-  padding-top: 30px;
+nav ul li:hover {
+  color: white;
+  background-color: #555;
 }
 
-.gameboard{
-  padding-bottom: 30px;
-  padding-top: 30px;
-} */
-
-.restart-button{
-  border-collapse:  solid 10px red ;
+.gameborad {
+  margin: 0;
+  padding: 0;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
 }
-#surrender{
+
+.input-buttons {
+  width: 71%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.one-letter-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#letter {
+  margin-top: 9px;
+  margin-left: 9px;
   font-size: 20px;
   height: 40px;
-  background-color: red;
+}
+
+#oneLetter {
+  font-size: 20px;
+  height: 45px;
+  margin-right: 9px;
+  margin-top: 9px;
+}
+
+.full-word-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.results {
+  font-size: 21px;
+}
+
+.defSize {
+  font-size: 16px;
+}
+
+#word {
+  font-size: 20px;
+  margin-left: 9px;
+  height: 40px;
+  margin-bottom: 9px;
+}
+
+#fullWord {
+  margin-right: 9px;
+  margin-bottom: 9px;
+  font-size: 20px;
+  height: 45px;
+}
+
+.board {
+  width: 35%;
   align-items: center;
-  flex-grow: 1;
+}
+
+#gameboard {
+  align-items: center;
+  justify-content: center;
+}
+
+#resultsDiv {
+  align-items: center;
+  justify-content: center;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  justify-content: space-between;
+}
+
+#heart {
+  margin-top: 20px;
+  height: 100px;
+}
+
+#hintsButton {
+  margin-left: 10px;
+  height: 40px;
+  width: 70px;
+  font-size: 20px;
+}
+
+#checkPlace {
+  margin-right: 25px;
+  padding-right: 20px;
 }
